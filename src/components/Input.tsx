@@ -3,9 +3,10 @@ import React from "react";
 type IProps = {
   todo: string;
   setTodo: React.Dispatch<React.SetStateAction<string>>;
+  addMessage: () => void;
 };
 
-const Input: React.FC<IProps> = ({ todo, setTodo }) => {
+const Input: React.FC<IProps> = ({ todo, setTodo, addMessage }) => {
   return (
     <>
       <input
@@ -16,7 +17,7 @@ const Input: React.FC<IProps> = ({ todo, setTodo }) => {
         type="text"
         placeholder="name"
       />
-      <button>Add</button>
+      <button onClick={addMessage}>Add</button>
     </>
   );
 };
